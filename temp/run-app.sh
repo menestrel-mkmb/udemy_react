@@ -1,3 +1,3 @@
-cd $PROJECT_PATH
+cd $APP_PATH
 
 npm start
