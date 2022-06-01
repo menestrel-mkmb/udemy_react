@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 
 function Tasks() {
   const [input, setInput] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(["Esta é uma task teste"]);
 
+  // GET local storage
   useEffect(() => {
     const localTasks = localStorage.getItem("@tasks");
 
-    if (localTasks) {
-      setTasks(JSON.parse(localTasks));
-    }
+    if (localTasks && tasks !== []) setTasks(JSON.parse(localTasks));
   }, []);
 
+  // save task list change to local storage
   useEffect(() => {
     localStorage.setItem("@tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -19,8 +19,21 @@ function Tasks() {
   function addTask(e) {
     e.preventDefault();
 
-    setTasks([...tasks, input]);
+    if (input !== "") setTasks([...tasks, input]);
     setInput("");
+  }
+
+  function removeTask(e, testTask) {
+    e.preventDefault();
+
+    if (tasks) setTasks((tasks) => tasks.filter((tasks) => tasks !== testTask));
+  }
+
+  function clearTaskList(e) {
+    e.preventDefault();
+
+    setTasks([]);
+    localStorage.removeItem("@tasks");
   }
 
   return (
@@ -38,10 +51,20 @@ function Tasks() {
         ></input>
         <button type="submit">Adicionar tarefa</button>
       </form>
+      <div onClick={clearTaskList}>
+        <button type="submit">Limpar lista</button>
+      </div>
       <ul className="tasks tasks__ul task-list">
-        {tasks.map((tarefa) => (
-          <li key={tarefa} className="task task__item item">
+        {tasks.map((tarefa, index) => (
+          <li key={index} className="task task__item item">
             {tarefa}
+            <button
+              key={index}
+              type="submit"
+              onClick={(e, index) => removeTask(e, tarefa)}
+            >
+              X
+            </button>
           </li>
         ))}
       </ul>
