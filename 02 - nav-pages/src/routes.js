@@ -4,9 +4,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
+import Header from "./components/Header/index";
+
 function RoutesApp() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<About />} />

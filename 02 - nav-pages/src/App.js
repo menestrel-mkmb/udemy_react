@@ -1,7 +1,6 @@
 import "./reset.css";
 import "./App.css";
 import RoutesApp from "./routes";
-import { Route } from "react-router-dom";
 
 function App() {
   return (
