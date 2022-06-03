@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
+import NotFound from "./pages/NotFound";
+
 import Header from "./components/Header/index";
 
 function RoutesApp() {
@@ -14,6 +16,8 @@ function RoutesApp() {
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<About />} />
         <Route path="/contato" element={<Contact />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
