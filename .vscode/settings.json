@@ -1,6 +1,6 @@
 {
   "emmet.preferences": {
-    "javascript": ["javascript", "javascriptreact"]
+    "javascript": "javascriptreact"
   },
   "emmet.syntaxProfiles": {}
 }
