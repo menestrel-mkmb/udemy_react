@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
 
+import "./header.css";
+
 function Header() {
   return (
-    <header>
-      <nav className="header__nav">
-        <Link to="/">Home</Link>
-        <Link to="/mylist">MyList</Link>
-        <Link to="/movie">Movie</Link>
+    <header className="header__sect flex parent_row">
+      <span className="logo__span logo home">Prime flix</span>
+      <nav className="header__nav flex parent_row">
+        <Link className="menu__link link" to="/">
+          Home
+        </Link>
+        <Link className="menu__link link" to="/mylist">
+          MyList
+        </Link>
+        <Link className="menu__link link" to="/movie">
+          Movie
+        </Link>
       </nav>
     </header>
   );

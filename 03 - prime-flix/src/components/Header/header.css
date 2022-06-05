@@ -1,0 +1,56 @@
+.flex {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+
+  padding: 0.5rem 0.5rem;
+}
+
+.parent_col {
+  flex-direction: column;
+}
+
+.parent_row {
+  flex-direction: row;
+}
+
+nav {
+  gap: 2rem;
+}
+
+.header__sect {
+  background-color: black;
+  color: white;
+}
+
+.home,
+.header__nav {
+  box-sizing: border-box;
+  padding: 1rem 3rem;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.menu__link {
+  border: 2px white solid;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.menu__link:hover {
+  background-color: white;
+  box-sizing: border-box;
+  color: black;
+  font-weight: 700;
+}
