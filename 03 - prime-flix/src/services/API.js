@@ -6,6 +6,7 @@ export const api = axios.create({
 
 export const endpoints = {
   movies_now_playing: "movie/now_playing",
+  images_url_base: "https://image.tmdb.org/t/p/original/",
 };
 
 export const API_PARAMS = {
