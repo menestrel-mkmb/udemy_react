@@ -13,8 +13,8 @@ function RoutesApp() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/myList" element={<MyList />} />
+        <Route path="" element={<Home />} />
+        <Route path="/mylist" element={<MyList />} />
         <Route path="/movie/:id" element={<Movies />} />
 
         <Route path="*" element={<NotFound />} />

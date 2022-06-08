@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 
 function MyList() {
-  let [myList, setMyList] = useState([]);
-  let localList;
+  const [myList, setMyList] = useState([]);
 
   useEffect(() => {
-    localList = localStorage.getItem("@myList");
+    const localList = localStorage.getItem("@myList");
+
+    if (localList) setMyList(JSON.parse(localList));
   }, []);
 
   useEffect(() => {
-    localList.setItem("@myList", localList);
-  }, myList);
+    localStorage.setItem("@myList", JSON.stringify(myList));
+  }, [myList]);
 
   function removeMovie(e, movieToRemove) {
     e.preventDefault();
 
     setMyList((myList) => {
       myList.filter((movie) => {
-        return movie.id != movieToRemove;
+        return movie.id !== movieToRemove;
       });
     });
   }
@@ -32,9 +33,10 @@ function MyList() {
               className="movie__artc article movie__item item list__item"
             >
               <h2 className="movie__title title movie__name">{movie.title}</h2>
-              <form action="" onSubmit={removeMovie(e, movie.id)}>
-                <button type="submit"> - </button>
-              </form>
+
+              <button type="submit" onClick={(e) => removeMovie(e, movie.id)}>
+                -
+              </button>
             </article>
           );
         })}
