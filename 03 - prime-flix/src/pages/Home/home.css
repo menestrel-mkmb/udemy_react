@@ -1,27 +1,73 @@
-a {
-  color: inherit;
-  text-decoration: none;
+.movies__sect {
+  background-color: aliceblue;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+
+  margin-inline: auto;
+  padding: 1rem;
+  width: 80%;
 }
 
 .article {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  border: 2px #0004 solid;
-  border-radius: 0.5rem;
   cursor: pointer;
 
   box-sizing: border-box;
-  margin: 2rem 1rem;
-  padding: 1rem 0.5rem;
 
   height: 300px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .img {
   display: block;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 
-  max-height: 250px;
+  object-fit: cover;
+
+  max-height: 300px;
+  width: 300px;
+}
+
+.text__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+
+  border-top: 2px solid #0004;
+  border-right: 2px solid #0004;
+  border-bottom: 2px solid #0004;
+
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  height: (100px, 100%, 300px);
+  width: 100px;
+}
+
+.title {
+  box-sizing: border-box;
+  display: block;
+
+  padding: 0.5rem 0.5rem;
+
+  width: 100%;
+}
+
+a.movie__link {
+  background-color: #9999ff;
+  display: block;
+
+  border-bottom-right-radius: 0.5rem;
+
+  color: white;
+  text-decoration: none;
+
+  padding: 0.5rem 1rem;
 }
