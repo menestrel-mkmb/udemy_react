@@ -1,5 +1,9 @@
+main {
+  background-color: #eee;
+}
+
 .movies__sect {
-  background-color: aliceblue;
+  background-color: #ddd3;
 
   display: flex;
   flex-direction: row;
@@ -14,19 +18,40 @@
 
 .article {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   cursor: pointer;
 
   box-sizing: border-box;
 
+  margin: 2rem 0;
   height: 300px;
   width: 80%;
-  max-width: 800px;
+  max-width: 300px;
+}
+
+.title {
+  background-color: #000;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+  display: block;
+
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+
+  padding: 0.5rem 0.5rem;
+
+  width: 100%;
 }
 
 .img {
   display: block;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
 
   object-fit: cover;
 
@@ -34,40 +59,17 @@
   width: 300px;
 }
 
-.text__div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
-
-  border-top: 2px solid #0004;
-  border-right: 2px solid #0004;
-  border-bottom: 2px solid #0004;
-
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-
-  height: (100px, 100%, 300px);
-  width: 100px;
-}
-
-.title {
-  box-sizing: border-box;
-  display: block;
-
-  padding: 0.5rem 0.5rem;
-
-  width: 100%;
-}
-
 a.movie__link {
-  background-color: #9999ff;
+  background-color: #000;
   display: block;
 
+  box-sizing: border-box;
   border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 
   color: white;
   text-decoration: none;
 
   padding: 0.5rem 1rem;
+  width: 100%;
 }
