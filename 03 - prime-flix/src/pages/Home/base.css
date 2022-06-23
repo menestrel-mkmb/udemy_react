@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.parent__col {
+  flex-direction: column;
+}
+
+.parent__row {
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}

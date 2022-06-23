@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./../../reset.css";
 import "./home.css";
+import "./base.css";
 
 const index_param = {
   api_key: API_PARAMS.KEY,
@@ -13,6 +14,7 @@ const index_param = {
 
 function Home() {
   const [filmes, setFilmes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadFilmes() {
@@ -22,9 +24,18 @@ function Home() {
 
       console.log(response);
       setFilmes(response.data.results);
+      setLoading(false);
     }
     loadFilmes();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading__div">
+        <h2 className="title loading__title">Loading...</h2>
+      </div>
+    );
+  }
 
   return (
     <main className="main__sect content parent_row">

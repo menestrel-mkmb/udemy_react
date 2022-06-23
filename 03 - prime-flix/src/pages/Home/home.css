@@ -2,6 +2,16 @@ main {
   background-color: #eee;
 }
 
+.loading__div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+}
+
 .movies__sect {
   background-color: #ddd3;
 
@@ -35,12 +45,16 @@ main {
 }
 
 .title {
-  background-color: #0008;
-  color: #eee;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.movie__title {
+  background-color: #0008;
+  color: #eee;
 
   box-sizing: border-box;
+
   display: block;
 
   border-top-left-radius: 0.5rem;

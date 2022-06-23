@@ -1,0 +1,16 @@
+.error__sect {
+  background-color: antiquewhite;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.error__title {
+  font-size: 3rem;
+  color: chocolate;
+}
+
+.error__text {
+  color: coral;
+  font-weight: 500;
+}
