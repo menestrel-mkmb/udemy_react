@@ -22,7 +22,6 @@ function Home() {
         params: index_param,
       });
 
-      console.log(response);
       setFilmes(response.data.results);
       setLoading(false);
     }
@@ -47,7 +46,7 @@ function Home() {
               <img
                 src={endpoints.images_url_base + movie.poster_path}
                 alt={"poster " + movie.title}
-                className="banner__movie banner img"
+                className="movie__banner banner img"
               />
               <Link className="movie__link" to={"/movie/" + movie.id}>
                 Acessar
