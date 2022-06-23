@@ -4,7 +4,7 @@
   color: white;
 }
 
-.movie__artc {
+.movie-info__artc {
   background-color: #fff8;
   box-shadow: 5px 5px 5px #0003;
   color: black;
@@ -74,4 +74,27 @@
 
 .rating__span::before {
   content: "Avaliação Geral: ";
+}
+
+.genres__span::before {
+  content: "Gêneros: ";
+}
+
+.btns__div {
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.action__btn {
+  background-color: #000;
+  color: #fff;
+
+  border: none;
+  border-radius: 0.2rem;
+
+  margin: 0.5rem;
+  padding: 1rem 2rem;
 }

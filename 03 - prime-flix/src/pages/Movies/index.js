@@ -44,14 +44,14 @@ function Movies() {
 
   return (
     <main className="movie-info__main">
-      <article className="movie__artc artc">
+      <article className="movie-info__artc artc">
         <img
           src={endpoints.images_url_base + movie.backdrop_path}
           alt={`Pôster de ${movie.title}`}
           className="movie-info__backdrop banner img"
         />
         <h2 className="title movie-info__title">{movie.title}</h2>
-        <div className="desc__div flex parent__row wrap">
+        <div className="desc__div flex parent__row wrap center">
           <img
             src={endpoints.images_url_base + movie.poster_path}
             alt={`Pôster de ${movie.title}`}
@@ -67,8 +67,29 @@ function Movies() {
             <span className="movie__span rating__span">
               {movie.vote_average}
             </span>
+            <span className="movie__span genres__span">
+              {movie.genres
+                .map((object) => {
+                  return object.name;
+                })
+                .join(", ")}
+            </span>
+
             <h3 className="sub-title sinopse__title">Sinopse</h3>
             <span className="movie__span sinopse">{movie.overview}</span>
+          </div>
+          <div className="btns__div flex parent__row center">
+            <button className="save__btn action__btn btn">Salvar</button>
+            <a href="#" className="trailler__link external__link">
+              <button className="trailler__btn action__btn btn">
+                Trailler
+              </button>
+            </a>
+            <a href="#" className="official__link external__link">
+              <button className="official__btn action__btn btn">
+                Site oficial
+              </button>
+            </a>
           </div>
         </div>
       </article>

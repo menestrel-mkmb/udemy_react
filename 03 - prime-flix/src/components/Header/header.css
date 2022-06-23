@@ -8,11 +8,11 @@
   padding: 0.5rem 0.5rem;
 }
 
-.parent_col {
+.parent__col {
   flex-direction: column;
 }
 
-.parent_row {
+.parent__row {
   flex-direction: row;
 }
 
