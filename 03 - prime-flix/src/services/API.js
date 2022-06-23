@@ -8,6 +8,8 @@ export const endpoints = {
   movies_now_playing: "movie/now_playing",
   images_url_base: "https://image.tmdb.org/t/p/original/",
   view_movie: "/movie/",
+  imdb_movie: "https://www.imdb.com/title/",
+  youtube_trailer: "https://www.youtube.com/results?search_query=",
 };
 
 export const API_PARAMS = {

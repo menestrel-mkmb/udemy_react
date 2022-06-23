@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { API_PARAMS, api, endpoints } from "../../services/API";
 
@@ -7,6 +7,9 @@ import "./movie.css";
 
 function Movies() {
   const { id } = useParams();
+
+  const navigate = useNavigate();
+
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -20,19 +23,19 @@ function Movies() {
           },
         })
         .then((response) => {
-          console.log(response.data);
           if (response.status == 200) {
             setMovie(response.data);
             setLoading(false);
           }
         })
         .catch(() => {
-          console.log("FILME NÃO ENCONTRADO");
+          navigate("/", { replace: true });
+          alert("Filme não encontrado, retornando à Home");
         });
     }
 
     loadFilme();
-  }, []);
+  }, [id, navigate]);
 
   if (loading) {
     return (
@@ -65,7 +68,7 @@ function Movies() {
               {movie.release_date}
             </span>
             <span className="movie__span rating__span">
-              {movie.vote_average}
+              {movie.vote_average} / 10 ({movie.vote_count} votos)
             </span>
             <span className="movie__span genres__span">
               {movie.genres
@@ -80,14 +83,39 @@ function Movies() {
           </div>
           <div className="btns__div flex parent__row center">
             <button className="save__btn action__btn btn">Salvar</button>
-            <a href="#" className="trailler__link external__link">
+            {() => {
+              if (movie.video) {
+                <a
+                  href={movie.video}
+                  target="_blank"
+                  className="trailler__link external__link"
+                >
+                  <button className="trailler__btn action__btn btn">
+                    Trailer oficial
+                  </button>
+                </a>;
+              }
+            }}
+            <a
+              href={endpoints.youtube_trailer + movie.title + " trailer"}
+              target="_blank"
+              className="trailler__link external__link"
+            >
               <button className="trailler__btn action__btn btn">
-                Trailler
+                Trailer Youtube
               </button>
             </a>
-            <a href="#" className="official__link external__link">
+            <a href={movie.homepage} className="official__link external__link">
               <button className="official__btn action__btn btn">
                 Site oficial
+              </button>
+            </a>
+            <a
+              href={`${endpoints.imdb_movie}${movie.imdb_id}`}
+              className="imdb__link external__link"
+            >
+              <button className="imdb__btn action__btn btn">
+                Filme no IMDB
               </button>
             </a>
           </div>

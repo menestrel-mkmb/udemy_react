@@ -13,9 +13,10 @@
 
   margin: 0 auto;
   padding: 2rem;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 96px);
   width: 80%;
 
+  box-sizing: border-box;
   z-index: 0;
 }
 
@@ -26,16 +27,19 @@
   top: 0;
   left: 0;
 
-  height: 100%;
+  height: calc(100vh - 96px);
   width: 100%;
 
   z-index: -1;
 }
 
 .movie-info__title {
+  background-color: #0006;
   color: white;
   font-size: 3rem;
   text-align: center;
+
+  width: 100%;
 }
 
 .desc__div {
@@ -43,12 +47,15 @@
   border-radius: 0.5rem;
   overflow: hidden;
 
+  gap: 3rem;
+
   margin: 1rem auto;
   width: 80%;
 }
 
 .movie-info__banner {
-  width: 50%;
+  max-height: 400px;
+  max-width: 50%;
 }
 
 .text__div {
