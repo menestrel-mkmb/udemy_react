@@ -29,13 +29,14 @@ main {
 
   margin: 2rem 0;
   height: 300px;
-  width: 80%;
-  max-width: 300px;
+  width: 300px;
+
+  position: relative;
 }
 
 .title {
-  background-color: #000;
-  color: white;
+  background-color: #0008;
+  color: #eee;
   font-weight: 700;
   text-transform: uppercase;
 
@@ -48,19 +49,34 @@ main {
   padding: 0.5rem 0.5rem;
 
   width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
 }
 
 .img {
+  background-color: #3333;
+  border-radius: 0.5rem;
+
   display: block;
 
-  object-fit: cover;
+  object-fit: contain;
 
   max-height: 300px;
   width: 300px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
 }
 
 a.movie__link {
-  background-color: #000;
+  background-color: #0008;
   display: block;
 
   box-sizing: border-box;
@@ -72,4 +88,10 @@ a.movie__link {
 
   padding: 0.5rem 1rem;
   width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: 2;
 }
