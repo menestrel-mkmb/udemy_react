@@ -35,7 +35,26 @@ function Movies() {
     }
 
     loadFilme();
+    console.log(movie);
   }, [id, navigate]);
+
+  const saveMovie = () => {
+    const myList = localStorage.getItem("@listMovies");
+    let movies = JSON.parse(myList) || [];
+
+    const alreadyOnList = movies.some(
+      (movieToSave) => movie.id === movieToSave.id
+    );
+
+    if (alreadyOnList) {
+      alert("O filme já está na lista");
+      return;
+    }
+
+    movies.push(movie);
+    localStorage.setItem("@listMovies", JSON.stringify(movies));
+    alert("Filme salvo com sucesso");
+  };
 
   if (loading) {
     return (
@@ -82,12 +101,15 @@ function Movies() {
             <span className="movie__span sinopse">{movie.overview}</span>
           </div>
           <div className="btns__div flex parent__row center">
-            <button className="save__btn action__btn btn">Salvar</button>
+            <button className="save__btn action__btn btn" onClick={saveMovie}>
+              Salvar
+            </button>
             {() => {
               if (movie.video) {
                 <a
                   href={movie.video}
-                  target="_blank"
+                  target="blank"
+                  rel="external"
                   className="trailler__link external__link"
                 >
                   <button className="trailler__btn action__btn btn">
@@ -98,20 +120,32 @@ function Movies() {
             }}
             <a
               href={endpoints.youtube_trailer + movie.title + " trailer"}
-              target="_blank"
+              target="blank"
+              rel="external"
               className="trailler__link external__link"
             >
               <button className="trailler__btn action__btn btn">
                 Trailer Youtube
               </button>
             </a>
-            <a href={movie.homepage} className="official__link external__link">
-              <button className="official__btn action__btn btn">
-                Site oficial
-              </button>
-            </a>
+            {() => {
+              if (movie.homepage) {
+                <a
+                  href={movie.homepage}
+                  target="blank"
+                  rel="external"
+                  className="official__link external__link"
+                >
+                  <button className="official__btn action__btn btn">
+                    Site oficial
+                  </button>
+                </a>;
+              }
+            }}
             <a
               href={`${endpoints.imdb_movie}${movie.imdb_id}`}
+              target="blank"
+              rel="external"
               className="imdb__link external__link"
             >
               <button className="imdb__btn action__btn btn">

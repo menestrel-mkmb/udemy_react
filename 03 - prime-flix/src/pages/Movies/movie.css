@@ -12,8 +12,7 @@
   position: relative;
 
   margin: 0 auto;
-  padding: 2rem;
-  height: calc(100vh - 96px);
+  min-height: calc(100vh - 96px);
   width: 80%;
 
   box-sizing: border-box;
@@ -27,7 +26,7 @@
   top: 0;
   left: 0;
 
-  height: calc(100vh - 96px);
+  height: 100%;
   width: 100%;
 
   z-index: -1;
@@ -39,6 +38,9 @@
   font-size: 3rem;
   text-align: center;
 
+  position: relative;
+  top: 2rem;
+
   width: 100%;
 }
 
@@ -49,7 +51,11 @@
 
   gap: 3rem;
 
-  margin: 1rem auto;
+  position: absolute;
+
+  top: 6rem;
+  left: 10%;
+
   width: 80%;
 }
 
