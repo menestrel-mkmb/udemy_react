@@ -39,7 +39,7 @@ function Movies() {
   }, [id, navigate]);
 
   const saveMovie = () => {
-    const myList = localStorage.getItem("@listMovies");
+    const myList = localStorage.getItem("@myList");
     let movies = JSON.parse(myList) || [];
 
     const alreadyOnList = movies.some(
@@ -52,7 +52,7 @@ function Movies() {
     }
 
     movies.push(movie);
-    localStorage.setItem("@listMovies", JSON.stringify(movies));
+    localStorage.setItem("@myList", JSON.stringify(movies));
     alert("Filme salvo com sucesso");
   };
 

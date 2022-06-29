@@ -1,0 +1,23 @@
+.my-list__link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.my-list__artc .title {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.remove__btn {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #0003;
+  color: white;
+
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  z-index: 2;
+  padding: 0.5rem 1rem;
+}

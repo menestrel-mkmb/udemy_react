@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { API_PARAMS, api, endpoints } from "../../services/API";
 import { Link } from "react-router-dom";
+
+import { API_PARAMS, api, endpoints } from "../../services/API";
 
 import "./../../reset.css";
 import "./home.css";
@@ -48,7 +49,7 @@ function Home() {
                 alt={"poster " + movie.title}
                 className="movie__banner banner img"
               />
-              <Link className="movie__link" to={"/movie/" + movie.id}>
+              <Link className="action__link" to={"/movie/" + movie.id}>
                 Acessar
               </Link>
             </article>
