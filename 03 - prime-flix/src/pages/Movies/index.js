@@ -23,7 +23,7 @@ function Movies() {
           },
         })
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status === 200) {
             setMovie(response.data);
             setLoading(false);
           }
@@ -35,7 +35,6 @@ function Movies() {
     }
 
     loadFilme();
-    console.log(movie);
   }, [id, navigate]);
 
   const saveMovie = () => {

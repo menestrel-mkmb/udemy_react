@@ -7,24 +7,24 @@ import "./myList.css";
 
 function MyList() {
   const [myList, setMyList] = useState([]);
-  const localList = localStorage.getItem("@myList");
+  let localList = localStorage.getItem("@myList");
 
   useEffect(() => {
     if (localList) setMyList(JSON.parse(localList));
   }, []);
 
   useEffect(() => {
-    if (localList) localStorage.setItem("@myList", JSON.stringify(myList));
+    localStorage.setItem("@myList", JSON.stringify(myList));
   }, [myList]);
 
-  function removeMovie(e, movieToRemove) {
+  function removeMovie(e, movieIdToRemove) {
     e.preventDefault();
 
-    setMyList((myList) => {
+    setMyList(
       myList.filter((movie) => {
-        return movie.id !== movieToRemove;
-      });
-    });
+        return movie.id !== movieIdToRemove;
+      })
+    );
   }
 
   return (
