@@ -43,14 +43,14 @@ function Home() {
         {filmes.map((movie) => {
           return (
             <article key={movie.id} className="movie item movie__artc article">
-              <h2 className="movie__title title"> {movie.title} </h2>
-              <img
-                src={endpoints.images_url_base + movie.poster_path}
-                alt={"poster " + movie.title}
-                className="movie__banner banner img"
-              />
-              <Link className="action__link" to={"/movie/" + movie.id}>
-                Acessar
+              <Link to={"/movie/" + movie.id}>
+                <h2 className="movie__title title"> {movie.title} </h2>
+                <img
+                  src={endpoints.images_url_base + movie.poster_path}
+                  alt={"poster " + movie.title}
+                  className="movie__banner banner img"
+                />
+                <span className="action__link">Acessar</span>
               </Link>
             </article>
           );

@@ -90,7 +90,7 @@ main {
   z-index: 1;
 }
 
-a.action__link {
+span.action__link {
   background-color: #0008;
   display: block;
 
