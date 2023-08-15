@@ -1,5 +1,5 @@
 main {
-  background-color: #eee;
+  background-color: #040404;
 }
 
 .loading__div {
@@ -13,7 +13,7 @@ main {
 }
 
 .movies__sect {
-  background-color: #ddd3;
+  background-color: #0a0a0a;
 
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@ main {
 
   margin: 2rem 0;
   height: 300px;
-  width: 300px;
+  width: 200px;
 
   position: relative;
 }
@@ -50,7 +50,7 @@ main {
 }
 
 .movie__title {
-  background-color: #0008;
+  background-color: #06060690;
   color: #eee;
 
   box-sizing: border-box;
@@ -72,7 +72,8 @@ main {
 }
 
 .movie__banner {
-  background-color: #3333;
+  background: #232323;
+  border: 1px solid #ddd;
   border-radius: 0.5rem;
 
   display: block;
@@ -80,7 +81,7 @@ main {
   object-fit: contain;
 
   max-height: 300px;
-  width: 300px;
+  width: 200px;
 
   position: absolute;
   top: 0;
